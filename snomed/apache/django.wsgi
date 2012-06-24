@@ -1,7 +1,7 @@
 Port=8888
 import os
 import sys
-path='/data/sites/ontology'
+path='/data/sites/Ontology-Tools'
 if path not in sys.path:
 	sys.path.insert(0,path)
 os.environ['DJANGO_SETTINGS_MODULE']='snomed.settings'
