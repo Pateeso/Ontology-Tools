@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %} Ontology 2.0 Browser {% endblock %} 
+{% block headCss %}
+<link type="text/css" href="/static/css/jit/base.css" rel="stylesheet" />
+<link type="text/css" href="/static/css/jit/RGraph.css" rel="stylesheet" />
+{% endblock %}
+{% block headScriptsStart %}
+<!--[if IE]><script language="javascript" type="text/javascript" src="/static/js/jit/Extras/excanvas.js"></script><![endif]-->
+
+<!-- JIT Library File -->
+<script language="javascript" type="text/javascript" src="/static/js/jit/jit.js"></script>
+
+<!-- Example File -->
+<script language="javascript" type="text/javascript" src="/static/js/jit/Examples/RGraph/example1.js"></script>
+{% endblock %}
+{% block headScriptsEnd %}
+    <script type="text/javascript" src="/static/js/jqwidgets/jqxbuttons.js"></script>
+    <script type="text/javascript" src="/static/js/jqwidgets/jqxscrollbar.js"></script>
+    <script type="text/javascript" src="/static/js/jqwidgets/jqxpanel.js"></script>
+    <script type="text/javascript" src="/static/js/jqwidgets/jqxtree.js"></script>
+    <script type="text/javascript" src="/static/js/jqwidgets/jqxexpander.js"></script>
+{% endblock %}
+{% block pageContent %}
+{% include "browser/snomed_tree.html" %}
+<div id="container" style:'width:600px;'>
+
+
+<div id="center-container" style='left:0px;float:right'>
+    <div id="infovis"></div>    
+</div>
+</div>
+<div id="right-container">
+
+<div id="inner-details"></div>
+
+</div>
+
+<div id="instructions">
+<div class="text">
+<h4>
+Tree Animation    
+</h4> 
+
+            A static JSON Tree structure is used as input for this visualization.<br /><br />
+            <b>Click</b> on a node to move the tree and center that node.<br /><br />
+            The centered node's children are displayed in a relations list in the right column.<br /><br />
+            <b>Use the mouse wheel</b> to zoom and <b>drag and drop the canvas</b> to pan.
+            
+</div>
+
+</div>
+{% endblock %}
+

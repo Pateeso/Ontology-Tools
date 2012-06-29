@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+  "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>Jasmine Spec Runner for OntoTree jQuery Plugin: Helper</title>
+
+  <link rel="shortcut icon" type="image/png" href="spec/jasmine/images/jasmine_favicon.png">
+
+  <link href="spec/jasmine/lib/jasmine-core/jasmine.css" rel="stylesheet"/>
+<link rel='stylesheet' href='/static/css/home.css' media='screen'/>
+<link rel="stylesheet" href="/static/js/jqwidgets/styles/jqx.base.css" type="text/css" />
+<link rel="stylesheet" href="/static/js/jqwidgets/styles/jqx.classic.css" type="text/css" />
+
+  <script type="text/javascript" src="spec/jasmine/lib/jasmine-core/jasmine.js"></script>
+  <script type="text/javascript">
+    // yes, really keep this here to keep us honest, but only for jasmine's own runner! [xw]
+    undefined = "diz be undefined yo";
+  </script>
+
+
+  <!-- include source files here... -->
+  <script type="text/javascript" src="spec/jasmine/src/html/TrivialReporter.js"></script>
+  <script type="text/javascript" src="spec/jasmine/src/console/ConsoleReporter.js"></script>
+  <script type="text/javascript" src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js'></script>
+  <!-- include other jquery libraries here ... -->
+    <script type="text/javascript" src="/static/js/jqwidgets/jqxcore.js"></script>
+    <script type="text/javascript" src="/static/js/jqwidgets/jqxmenu.js"></script>
+    <script type="text/javascript" src="/static/js/jqwidgets/jqxcheckbox.js"></script>
+    <script type="text/javascript" src="/static/js/jqwidgets/jqxbuttons.js"></script>
+    <script type="text/javascript" src="/static/js/jqwidgets/jqxscrollbar.js"></script>
+    <script type="text/javascript" src="/static/js/jqwidgets/jqxpanel.js"></script>
+    <script type="text/javascript" src="/static/js/jqwidgets/jqxtree.js"></script>
+    <script type="text/javascript" src="/static/js/jqwidgets/jqxexpander.js"></script>
+
+  <script type="text/javascript" src="onto_tree_spec.js"></script>
+
+  <script type="text/javascript" src="onto_tree.js"></script>
+  
+  <script type="text/javascript">
+    (function() {
+      var jasmineEnv = jasmine.getEnv();
+      jasmineEnv.updateInterval = 1000;
+
+      var trivialReporter = new jasmine.TrivialReporter();
+
+      jasmineEnv.addReporter(trivialReporter);
+
+      jasmineEnv.specFilter = function(spec) {
+        return trivialReporter.specFilter(spec);
+      };
+
+      var currentWindowOnload = window.onload;
+
+      window.onload = function() {
+        if (currentWindowOnload) {
+          currentWindowOnload();
+        }
+        execJasmine();
+      };
+
+      function execJasmine() {
+        jasmineEnv.execute();
+      }
+
+    })();
+  </script>
+
+</head>
+
+<body>
+<div class='OntoTree' id='instanceOne'></div>
+</div>
+
+</body>
+</html>

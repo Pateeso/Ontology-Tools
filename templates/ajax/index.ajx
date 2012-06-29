@@ -1,0 +1,7 @@
+{ "ontologyFSN":"{{root}}",
+"start":"{{start}}",
+"parents":[{"id":"{{node.id}}","pt":"{{node.pt}}","kids":"{{node.kids}}" ,"open":"true"}],"kids":[
+{% for k in kids %}
+    {"id":"{{k.ConceptID}}", "pt":"{{k.PreferredTerm}}", "kids":"{{k.kidCount}}", "open":"false"} {% if not forloop.last %},{% endif %}
+{% endfor %}
+]}
